@@ -1,0 +1,86 @@
+.titulo{
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+#form{
+
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 5rem;
+    
+}
+
+.form__tarjeta{
+
+    display:flex;
+    background-color: #C7CCF2;
+    flex-flow: column wrap;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+
+}
+
+.tarjeta__pasajero{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #A7ACCC;
+}
+
+.fa-solid{
+    
+    margin-right: 1rem;
+}
+
+.tarjeta__pasajeroNumero{
+
+    margin: auto;
+    padding: 1rem 0;
+    text-align: center;
+    color:#545666;
+    font-weight: 700;
+}
+
+.tarjeta__conjunto{
+    display: flex;
+    flex-flow: column wrap;
+    background-color: white;
+    margin: 0 1rem;
+    
+    
+    
+}
+
+label{
+    padding: 0.3rem 0.5rem;
+    font-size: 0.6rem;
+    
+    
+}
+
+.tarjeta__input{
+
+
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    outline: none;
+    border: solid 1px white;
+    border-radius: 1rem;
+    font-family: 'Raleway', sans-serif;
+    
+}
+
+
+
+#agregarPasaje{
+
+    text-align: center;
+    font-size: 1.5rem;
+    color:#696e8a;
+
+}
+
+

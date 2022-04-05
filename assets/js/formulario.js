@@ -1,37 +1,42 @@
-//var mensaje = `Hola! Quisiera sacar ${cantidad} para el ${dia} tengo que ver la hora de ${viaje}`;
+
+var anio,mes,dia,hora,minutos,opcionEscogida,cantidadPasajero;
+var wsp = `https://api.whatsapp.com/send?phone=2478515908&text=`;
+
+cantidadPasajero = 0;
 
 
-var nombre = document.querySelector("#nombre");
-console.log(nombre);
 
-nombre.addEventListener("keyup",function(){
+var cantidad = document.querySelector("#agregar");
+cantidad.addEventListener("click",function(){
 
-    console.log(nombre.value);
-   
+
+    crearFormularioTarjeta();
+    crearFormularioInputNombre();
+    crearFormularioInputDni();
+    crearFormularioInputCelular();
+    crearFormularioPasaje();
+    
+
 })
 
+ /*  var fechaElegida = fecha.value.toString();
+    anio = fechaElegida.slice(0,4);
+    mes = fechaElegida.slice(5,7);
+    dia = fechaElegida.slice(8,10);
+    hora = fechaElegida.slice(11,13);
+    minutos = fechaElegida.slice(14,16);
+  */
 
-var dni = document.querySelector("#dni");
-dni.addEventListener("keyup",function(){
 
-    console.log(dni.value);
-    
-})
 
-var celular = document.querySelector("#celular");
-celular.addEventListener("keyup",function(){
+var link = document.querySelector("#link");
+link.addEventListener("click",function(){
 
-    console.log(celular.value);
-    
-})
+    var viaje;
+    wsp = wsp+viaje;         //%0A Como te puedes fijar en la URL, %0A puede usarse para generar un caracter de salto de linea (0x0A).
+    link.setAttribute("href",`${wsp}`);
+    console.log(link);
 
-var fecha = document.querySelector("#fecha");
-fecha.addEventListener("blur",function(){
-
-    var año = fecha.value;
-    
-    console.log(fecha.value);
-    
 })
 
 

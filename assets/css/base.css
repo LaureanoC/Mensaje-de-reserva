@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap');
+
+:root {
+    font-family: 'Raleway', sans-serif;
+    background-color: whitesmoke;
+    scroll-behavior: smooth;
+    font-size: 1rem;
+    color: #464646;
+    
+}
+
+#agregar{
+    margin-left: 1rem;
+    font-size: 1rem;
+}
+
+.header{
+    padding:1rem 0;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: whitesmoke;
+  }

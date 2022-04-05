@@ -4,46 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet"href="assets/css/formulario.css">
+    <link rel="stylesheet"href="assets/css/pasaje.css">
+    <script src="https://kit.fontawesome.com/b95dc486b7.js" crossorigin="anonymous"></script>
     <title>Mensaje</title>
 </head>
 <body>
-    <h1>Rellenar Info</h1>
-    <form>
-        <div class="input">
-            <label for="nombre">Nombre</label>
-            <input  name="nombre" id="nombre" type="text" placeholder="Apellido y nombre">
-        </div>
-        <div class="input">
-            <label for="dni">DNI</label>
-            <input name="dni" id="dni" type="text" placeholder="42950004">
-        </div>
-
-        <div class="input">
-            <label for="celular">Phone</label>
-            <input name="celular" id="celular" type="number" placeholder="2478515908">
-        </div>
-
-        <div class="input">
-            <label for="dia">Dia</label>
-            <input name="fecha" id="fecha" type="datetime-local">
-        </div>
-
-        <div class="input">
-            <p>Seleccionar viaje</p>
-            <input name="viaje" id="viaje" type="radio"> 
-            <label for="viaje">Rosario hacia Arrecifes</label>
-            <input name="viaje" id="viaje" type="radio">
-            <label for="viaje">Arrecifes hacia Rosario</label>
-
-        </div>
-        
-        
-        </div>
+    <div class="sticky">
+        <header class="header">
+        <h1 class="titulo">Mensaje de reserva <i id="agregar" class="fa-solid fa-square-plus"></i></h1>
+        </header>
+    </div>
+    
+    <form id="form">
+     
     </form>
    
-    <a href="https://api.whatsapp.com/send?phone=2478515908&text=Hola, Nececito mas informacion!">Envíanos un mensaje de WhatsApp</a>
+    <a id="link" href="#">Envíanos un mensaje de WhatsApp</a>
     
     <script src="assets/js/formulario.js"></script>
+    <script src="assets/js/manejarCDform.js"></script>
+    <script src="assets/js/crearPasaje.js"></script>
+    
+   
+
 </body>
 </html>
