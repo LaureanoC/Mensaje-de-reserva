@@ -1,5 +1,5 @@
-
-var anio,mes,dia,hora,minutos,opcionEscogida,cantidadPasajero;
+var cantidadPasajero;
+var coleccionPasajeros = [];
 var wsp = `https://api.whatsapp.com/send?phone=2478515908&text=`;
 
 cantidadPasajero = 0;
@@ -9,13 +9,14 @@ cantidadPasajero = 0;
 var cantidad = document.querySelector("#agregar");
 cantidad.addEventListener("click",function(){
 
-
+    var pasajero = new Pasajero();
+    coleccionPasajeros.push(pasajero);
     crearFormularioTarjeta();
-    crearFormularioInputNombre();
-    crearFormularioInputDni();
-    crearFormularioInputCelular();
+
+    crearFormularioInputNombre(coleccionPasajeros[cantidadPasajero-1]);
+    crearFormularioInputDni(coleccionPasajeros[cantidadPasajero-1]);
+    crearFormularioInputCelular(coleccionPasajeros[cantidadPasajero-1]);
     crearFormularioPasaje();
-    
 
 })
 
@@ -32,10 +33,13 @@ cantidad.addEventListener("click",function(){
 var link = document.querySelector("#link");
 link.addEventListener("click",function(){
 
+    console.log(coleccionPasajeros);
+    console.log(coleccionPasajeros[0].devolverNombre());
+  /*
     var viaje;
     wsp = wsp+viaje;         //%0A Como te puedes fijar en la URL, %0A puede usarse para generar un caracter de salto de linea (0x0A).
     link.setAttribute("href",`${wsp}`);
-    console.log(link);
+    */
 
 })
 

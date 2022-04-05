@@ -92,7 +92,7 @@ function crearPasaje(evento){
 
 
     evento.target.parentNode.appendChild(pasaje);
-    console.log(pasaje);
+    
     
   
     crearFormularioInputSeleccionViaje(pasaje);

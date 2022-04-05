@@ -1,15 +1,33 @@
-export class Pasajero {
+class Pasajero {
 
     nombrePasajero;
     dniPasajero;
     telefonoPasajero;
     
 
-    constructor(nombre,dni,telefono) {
+    constructor() {
 
-        this.nombrePasajero = nombre;
-        this.dniPasajero= dni;
-        this.telefonoPasajero= telefono;
+        this.nombrePasajero = null;
+        this.dniPasajero= null;
+        this.telefonoPasajero= null;
+    }
+
+    asignarNombre(nombre){
+
+        this.nombrePasajero=nombre;
+
+    }
+
+    asignarCelular(celular){
+
+        this.telefonoPasajero=celular;
+
+    }
+
+    asignarDni(dni){
+
+        this.telefonoPasajero=dni;
+
     }
 
     devolverNombre(){

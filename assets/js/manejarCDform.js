@@ -60,7 +60,7 @@ function crearFormularioPasaje(){
 }
 
 
-function crearFormularioInputDni(){
+function crearFormularioInputDni(pasajero){
 
     const div = document.createElement("div");
     div.className="tarjeta__conjunto";
@@ -76,6 +76,12 @@ function crearFormularioInputDni(){
     input.setAttribute("placeholder","DNI");
     input.className="tarjeta__input";
 
+    input.addEventListener("keyup",function(){
+
+        pasajero.asignarDni(input.value);
+        
+    })
+
     const form = document.querySelectorAll(".form__tarjeta");
     
     let posFinal = form.length-1;
@@ -87,7 +93,7 @@ function crearFormularioInputDni(){
 }
 
 
-function crearFormularioInputCelular(){
+function crearFormularioInputCelular(pasajero){
 
     const div = document.createElement("div");
     div.className="tarjeta__conjunto";
@@ -99,9 +105,14 @@ function crearFormularioInputCelular(){
     const input = document.createElement("input");
     input.setAttribute("name","celular");
     input.setAttribute("id","celular");
-    input.setAttribute("type","number");
+    input.setAttribute("type","text");
     input.setAttribute("placeholder","2478515908");
     input.className="tarjeta__input";
+    input.addEventListener("keyup",function(){
+
+        pasajero.asignarCelular(input.value);
+        
+    })
 
     const form = document.querySelectorAll(".form__tarjeta");
     
@@ -114,7 +125,7 @@ function crearFormularioInputCelular(){
 
 
 
-function crearFormularioInputNombre(){
+function crearFormularioInputNombre(pasajero){
 
     const div = document.createElement("div");
     div.className="tarjeta__conjunto";
@@ -129,6 +140,12 @@ function crearFormularioInputNombre(){
     input.setAttribute("type","text");
     input.setAttribute("placeholder","Nombre y Apellido");
     input.className="tarjeta__input";
+    
+    input.addEventListener("keyup",function(){
+
+        pasajero.asignarNombre(input.value);
+        
+    })
 
     const form = document.querySelectorAll(".form__tarjeta");
     
@@ -136,5 +153,7 @@ function crearFormularioInputNombre(){
     form[posFinal].appendChild(div);
     div.appendChild(label);
     div.appendChild(input);
+
+
 
 }
