@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"href="assets/css/formulario.css">
+    <title>Mensaje</title>
+</head>
+<body>
+    <h1>Rellenar Info</h1>
+    <form>
+        <div class="input">
+            <label for="nombre">Nombre</label>
+            <input  name="nombre" id="nombre" type="text" placeholder="Apellido y nombre">
+        </div>
+        <div class="input">
+            <label for="dni">DNI</label>
+            <input name="dni" id="dni" type="text" placeholder="42950004">
+        </div>
+
+        <div class="input">
+            <label for="celular">Phone</label>
+            <input name="celular" id="celular" type="number" placeholder="2478515908">
+        </div>
+
+        <div class="input">
+            <label for="dia">Dia</label>
+            <input name="fecha" id="fecha" type="datetime-local">
+        </div>
+
+        <div class="input">
+            <p>Seleccionar viaje</p>
+            <input name="viaje" id="viaje" type="radio"> 
+            <label for="viaje">Rosario hacia Arrecifes</label>
+            <input name="viaje" id="viaje" type="radio">
+            <label for="viaje">Arrecifes hacia Rosario</label>
+
+        </div>
+        
+        
+        </div>
+    </form>
+   
+    <a href="https://api.whatsapp.com/send?phone=2478515908&text=Hola, Nececito mas informacion!">Envíanos un mensaje de WhatsApp</a>
+    
+    <script src="assets/js/formulario.js"></script>
+</body>
+</html>
