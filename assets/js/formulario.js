@@ -44,7 +44,7 @@ link.addEventListener("click",function(){
                 DNI: ${pasajero.devolverDni()}%0A
                 Teléfono: ${pasajero.devolverTelefono()}%0A
                 Fecha y Hora: ${pasajes[i].devolverDia()}/${pasajes[i].devolverMes()}/${pasajes[i].devolverAnio()} a las ${pasajes[i].devolverHora()}:${pasajes[i].devolverMinutos()}%0A
-                Dirección: ${pasajes[i].devolverDireccion()}%0A
+                Trayectoria: ${pasajes[i].devolverDireccion()}%0A
                 Intersección: ${pasajes[i].devolverInt()}
                 `;
 

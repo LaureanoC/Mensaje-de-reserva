@@ -38,7 +38,7 @@ function crearGenerarPasaje(pasaje,viaje,pasajero){
         const nombre = `Nombre: ${pasajero.devolverNombre()}`;
         const dni = `DNI: ${pasajero.devolverDni()}`;
         const telefono = `Teléfono: ${pasajero.devolverTelefono()}`;
-        const direccion = `Dirección: ${viaje.devolverDireccion()}`;
+        const direccion = `Trayectoria: ${viaje.devolverDireccion()}`;
         const interseccion = `Intersección: ${viaje.devolverInt()}`;
         const fechaHora = `  Fecha y Hora: ${viaje.devolverDia()}/${viaje.devolverMes()}/${viaje.devolverAnio()} a las ${viaje.devolverHora()}:${viaje.devolverMinutos()}`;
 
