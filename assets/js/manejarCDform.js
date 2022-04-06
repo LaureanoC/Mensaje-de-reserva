@@ -43,7 +43,8 @@ function crearFormularioTarjeta(){
 }
 
 
-function crearFormularioPasaje(){
+
+function crearFormularioPasaje(pasajero){
 
     const icono = document.createElement("i");
     icono.className = "fa-solid fa-square-plus";
@@ -51,7 +52,7 @@ function crearFormularioPasaje(){
 
     icono.addEventListener("click",function(evento){
 
-        crearPasaje(evento);
+        crearPasaje(evento,pasajero);
 
     })
     const form = document.querySelectorAll(".form__tarjeta");

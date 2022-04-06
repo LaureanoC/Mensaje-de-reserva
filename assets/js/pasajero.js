@@ -3,6 +3,7 @@ class Pasajero {
     nombrePasajero;
     dniPasajero;
     telefonoPasajero;
+    pasajes;
     
 
     constructor() {
@@ -10,6 +11,7 @@ class Pasajero {
         this.nombrePasajero = null;
         this.dniPasajero= null;
         this.telefonoPasajero= null;
+        this.pasajes = [];
     }
 
     asignarNombre(nombre){
@@ -26,8 +28,13 @@ class Pasajero {
 
     asignarDni(dni){
 
-        this.telefonoPasajero=dni;
+        this.dniPasajero=dni;
 
+    }
+
+    asignarPasaje(pasaje){
+        
+        this.pasajes.push(pasaje);
     }
 
     devolverNombre(){
@@ -41,5 +48,10 @@ class Pasajero {
     devolverTelefono(){
         return this.telefonoPasajero;
     }
+
+   devolverPasajes(){
+       return this.pasajes;
+   }
+    
   
 }

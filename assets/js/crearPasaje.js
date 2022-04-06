@@ -1,4 +1,84 @@
-function crearFormularioInputSeleccionViaje(pasaje){
+function crearGenerarPasaje(pasaje,viaje,pasajero){
+
+    const boton = document.createElement("button");
+    boton.textContent="GENERAR";
+    boton.className="pasaje__boton"
+    boton.id="generarPasaje";
+
+    boton.addEventListener("click",function(evento){
+
+        evento.preventDefault();
+
+        /*console.log(pasaje);
+        console.log(viaje);
+        console.log(pasajero);*/
+        pasajero.asignarPasaje(viaje);
+        //console.log(coleccionPasajeros[0].devolverPasaje());
+
+        for (i=1; i<pasaje.childNodes.length; i++){
+
+            pasaje.childNodes[i].remove();
+        }
+
+        pasaje.childNodes[1].remove();
+        pasaje.childNodes[1].remove();
+    
+        console.log(pasaje.childNodes)
+    
+        const descripcion = `Nombre: ${pasajero.devolverNombre()}
+                             DNI: ${pasajero.devolverDni()}
+                             Telefono: ${pasajero.devolverTelefono()}
+                             PasajeNro: ${Pasaje.devolverId()}
+                             Direccion: ${viaje.devolverDireccion()}
+                             Interseccion: ${viaje.devolverInt()}`;
+
+        // console.log(descripcion);
+
+        const pgenerado = document.createElement("p");
+        pgenerado.textContent = descripcion;
+
+        pasaje.appendChild(pgenerado);
+
+    })
+
+    pasaje.appendChild(boton);
+
+
+}
+
+function crearFormularioInputInterseccion(pasaje,viaje){
+
+    const div = document.createElement("div");
+    div.className="pasaje__conjuntos";
+
+    const label = document.createElement("label");
+    label.setAttribute("for","interseccion");
+    label.textContent ="Intersección";
+    
+    const input = document.createElement("input");
+    input.setAttribute("name","interseccion");
+    input.setAttribute("id","interseccion");
+    input.setAttribute("type","text");
+    input.setAttribute("placeholder","Corrientes y Pellegrini");
+    input.className="tarjeta__input";
+
+    input.addEventListener("keyup",function(){
+
+        console.log(input.value);
+        viaje.asignarInt(input.value);
+        
+    })
+
+    
+    
+    pasaje.appendChild(div);
+    div.appendChild(label);
+    div.appendChild(input);
+
+
+}
+
+function crearFormularioInputSeleccionViaje(pasaje,viaje){
 
     const p = document.createElement("p");
     p.textContent = "Seleccionar viaje";
@@ -8,6 +88,13 @@ function crearFormularioInputSeleccionViaje(pasaje){
     input1.setAttribute("name","viaje");
     input1.setAttribute("id","viaje");
     input1.setAttribute("type","radio");
+    
+    input1.addEventListener("click",function(){
+
+        viaje.asignarDireccion("Rosario hacia Arrecifes");
+        console.log(viaje.devolverDireccion());
+
+    })
  
     const label1 = document.createElement("label");
     label1.setAttribute("for","viaje");
@@ -17,6 +104,14 @@ function crearFormularioInputSeleccionViaje(pasaje){
     input2.setAttribute("name","viaje");
     input2.setAttribute("id","viaje");
     input2.setAttribute("type","radio");
+
+    input2.addEventListener("click",function(){
+
+
+        viaje.asignarDireccion("Arrecifes hacia Rosario");
+        console.log(viaje.devolverDireccion());
+
+    })
  
     const label2 = document.createElement("label");
     label2.setAttribute("for","viaje");
@@ -44,7 +139,7 @@ function crearFormularioInputSeleccionViaje(pasaje){
  
  }
  
- function crearFormularioInputFecha(pasaje){
+ function crearFormularioInputFecha(pasaje,viaje){
  
      const div = document.createElement("div");
      div.className="pasaje__conjuntoFecha";
@@ -59,18 +154,36 @@ function crearFormularioInputSeleccionViaje(pasaje){
      input.setAttribute("type","datetime-local");
      input.className="tarjeta__input";
 
+     input.addEventListener("blur",function(){
+
+
+        var fechaElegida = input.value.toString();
+        viaje.asignarAnio(fechaElegida.slice(0,4));
+        viaje.asignarMes(fechaElegida.slice(5,7));
+        viaje.asignarDia(fechaElegida.slice(8,10));
+        viaje.asignarHora(fechaElegida.slice(11,13));
+        viaje.asignarMinutos(fechaElegida.slice(14,16));
+        
+        console.log(viaje.devolverAnio());
+        console.log(viaje.devolverMes());
+        console.log(viaje.devolverDia());
+        console.log(viaje.devolverHora());
+        console.log(viaje.devolverMinutos());
+
+    })
+
     div.appendChild(label);
     div.appendChild(input);
-    
-   
     pasaje.appendChild(div);
-    
-    
-     
  }
 
 
-function crearPasaje(evento){
+function crearPasaje(evento,pasajero){
+
+    var viaje = new Pasaje();
+    Pasaje.asignarId();
+    viaje.asignarNro(Pasaje.devolverId());
+    console.log(viaje.devolverNro());
 
     const pasaje = document.createElement("div");
     pasaje.className="tarjeta__pasaje";
@@ -80,7 +193,7 @@ function crearPasaje(evento){
 
     const titulo = document.createElement("p");
     titulo.className = "pasaje__titulo";
-    titulo.textContent = `Pasaje n`;
+    titulo.textContent = `Pasaje numero ${viaje.devolverNro()}`;
 
     const icono = document.createElement("i");
     icono.className="fa-solid fa-xmark";
@@ -92,11 +205,11 @@ function crearPasaje(evento){
 
 
     evento.target.parentNode.appendChild(pasaje);
-    
-    
-  
-    crearFormularioInputSeleccionViaje(pasaje);
-    crearFormularioInputFecha(pasaje);
+
+    crearFormularioInputSeleccionViaje(pasaje,viaje);
+    crearFormularioInputFecha(pasaje,viaje);
+    crearFormularioInputInterseccion(pasaje,viaje);
+    crearGenerarPasaje(pasaje,viaje,pasajero);
     
 
 
