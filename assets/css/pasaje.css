@@ -21,13 +21,42 @@
     margin: auto;
     padding: 1rem 0;
     text-align: center;
-    color:#545666;
+    color:#5C6180;
     font-weight: 700;
 }
 
-.pasaje__conjuntos{
+.pasaje__conjuntos, .pasaje__conjuntoFecha{
 
     display: flex;
+    align-items: center;
     margin: 0 1rem;
+}
+
+.pasaje__boton{
+
+    font-family: 'Raleway',sans-serif;
+    color:#5C6180;
+    font-weight: 700;
+    background-color: #A7ACCC;
+    border: solid 1px #A7ACCC;
+    border-radius: 1rem;
+    padding:0.7rem;
+    margin: 0 auto;
+}
+
+.pasaje__input{
+
+    
+    padding:0.3rem 0.5rem;
+    outline: none;
+    border: solid 1px white;
+    border-radius: 1rem;
+    font-family: 'Raleway', sans-serif;
+    
+}
+
+.pasaje__itemlistado{
+
+    margin:0 0.5rem ;
 }
 

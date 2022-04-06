@@ -1,7 +1,7 @@
 function crearGenerarPasaje(pasaje,viaje,pasajero){
 
     const boton = document.createElement("button");
-    boton.textContent="GENERAR";
+    boton.textContent="Generar Pasaje";
     boton.className="pasaje__boton"
     boton.id="generarPasaje";
 
@@ -25,19 +25,35 @@ function crearGenerarPasaje(pasaje,viaje,pasajero){
     
         console.log(pasaje.childNodes)
     
-        const descripcion = `Nombre: ${pasajero.devolverNombre()}
+       /* const descripcion = `Nombre: ${pasajero.devolverNombre()}
                              DNI: ${pasajero.devolverDni()}
                              Telefono: ${pasajero.devolverTelefono()}
                              PasajeNro: ${Pasaje.devolverId()}
                              Direccion: ${viaje.devolverDireccion()}
+                             Fecha y Hora: ${viaje.devolverDia()}/${viaje.devolverMes()}/${viaje.devolverAnio()} a las ${viaje.devolverHora()}:${viaje.devolverMinutos()}           
                              Interseccion: ${viaje.devolverInt()}`;
-
+*/
         // console.log(descripcion);
+        const pasajeNro = `Número de pasaje: ${viaje.devolverNro()}`;
+        const nombre = `Nombre: ${pasajero.devolverNombre()}`;
+        const dni = `DNI: ${pasajero.devolverDni()}`;
+        const telefono = `Teléfono: ${pasajero.devolverTelefono()}`;
+        const direccion = `Dirección: ${viaje.devolverDireccion()}`;
+        const interseccion = `Intersección: ${viaje.devolverInt()}`;
+        const fechaHora = `  Fecha y Hora: ${viaje.devolverDia()}/${viaje.devolverMes()}/${viaje.devolverAnio()} a las ${viaje.devolverHora()}:${viaje.devolverMinutos()}`;
 
-        const pgenerado = document.createElement("p");
-        pgenerado.textContent = descripcion;
+        const descripcion = [pasajeNro, nombre, dni, telefono, direccion, interseccion, fechaHora];
 
-        pasaje.appendChild(pgenerado);
+        descripcion.forEach(function(d){
+
+            const pgenerado = document.createElement("p");
+            pgenerado.className="pasaje__itemlistado";
+            pgenerado.textContent = d;
+            pasaje.appendChild(pgenerado);
+
+        })
+      
+        
 
     })
 
@@ -60,7 +76,7 @@ function crearFormularioInputInterseccion(pasaje,viaje){
     input.setAttribute("id","interseccion");
     input.setAttribute("type","text");
     input.setAttribute("placeholder","Corrientes y Pellegrini");
-    input.className="tarjeta__input";
+    input.className="pasaje__input";
 
     input.addEventListener("keyup",function(){
 
@@ -152,7 +168,7 @@ function crearFormularioInputSeleccionViaje(pasaje,viaje){
      input.setAttribute("name","nombre");
      input.setAttribute("id","nombre");
      input.setAttribute("type","datetime-local");
-     input.className="tarjeta__input";
+     input.className="pasaje__input";
 
      input.addEventListener("blur",function(){
 

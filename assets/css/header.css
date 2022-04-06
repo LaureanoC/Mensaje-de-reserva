@@ -1,0 +1,22 @@
+#agregar{
+    margin-left: 1rem;
+    color:#A7ACCC;
+    font-size: 1rem;
+}
+
+.header{
+    padding:1rem 0;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: whitesmoke;
+  }
+
+.titulo{
+
+    color:#5C6180;
+    font-weight: 700;
+}

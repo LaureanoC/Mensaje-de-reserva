@@ -43,6 +43,7 @@ link.addEventListener("click",function(){
                 Nombre: ${pasajero.devolverNombre()}%0A
                 DNI: ${pasajero.devolverDni()}%0A
                 Teléfono: ${pasajero.devolverTelefono()}%0A
+                Fecha y Hora: ${pasajes[i].devolverDia()}/${pasajes[i].devolverMes()}/${pasajes[i].devolverAnio()} a las ${pasajes[i].devolverHora()}:${pasajes[i].devolverMinutos()}%0A
                 Dirección: ${pasajes[i].devolverDireccion()}%0A
                 Intersección: ${pasajes[i].devolverInt()}
                 `;
@@ -53,7 +54,7 @@ link.addEventListener("click",function(){
     })
 
 
-    var wsp = `https://api.whatsapp.com/send?phone=2478515908&text=${texto}`;
+    var wsp = `https://api.whatsapp.com/send?phone=3416728288&text=${texto}`;
     
         //%0A Como te puedes fijar en la URL, %0A puede usarse para generar un caracter de salto de linea (0x0A).
 
