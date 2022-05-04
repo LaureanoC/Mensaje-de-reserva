@@ -98,6 +98,16 @@ class Pasaje {
         return this.minutos;
     }
 
+    devolverSubeOBaja(direccion){
+        if(direccion == "Rosario hacia Arrecifes"){
+            direccion = "Sube en "
+            return direccion
+        } else {
+            direccion = "Baja en "
+            return direccion
+        }
+    }
+
 
     
 

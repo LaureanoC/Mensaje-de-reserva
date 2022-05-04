@@ -36,17 +36,11 @@ link.addEventListener("click",function(){
 
         var pasajes = pasajero.devolverPasajes();
         console.log(pasajes);
+        texto = texto + `%0ADatos del pasajero%0ANombre: ${pasajero.devolverNombre()}%0ADNI: ${pasajero.devolverDni()}%0ATeléfono: ${pasajero.devolverTelefono()}%0A%0A`
 
         for(i=0; i<pasajes.length; i++){
 
-            texto = texto+`%0APasaje número: ${pasajes[i].devolverNro()}%0A
-                Nombre: ${pasajero.devolverNombre()}%0A
-                DNI: ${pasajero.devolverDni()}%0A
-                Teléfono: ${pasajero.devolverTelefono()}%0A
-                Fecha y Hora: ${pasajes[i].devolverDia()}/${pasajes[i].devolverMes()}/${pasajes[i].devolverAnio()} a las ${pasajes[i].devolverHora()}:${pasajes[i].devolverMinutos()}%0A
-                Trayectoria: ${pasajes[i].devolverDireccion()}%0A
-                Intersección: ${pasajes[i].devolverInt()}
-                `;
+            texto = texto+`%0APasaje ${i+1}%0AFecha y Hora: ${pasajes[i].devolverDia()}/${pasajes[i].devolverMes()}/${pasajes[i].devolverAnio()} a las ${pasajes[i].devolverHora()}:${pasajes[i].devolverMinutos()}%0ATrayectoria: ${pasajes[i].devolverDireccion()}%0A${pasajes[i].devolverSubeOBaja(pasajes[i].devolverDireccion())}: ${pasajes[i].devolverInt()}%0A%0A`;
 
         }
 
@@ -54,7 +48,8 @@ link.addEventListener("click",function(){
     })
 
 
-    var wsp = `https://api.whatsapp.com/send?phone=3416728288&text=${texto}`;
+    //var wsp = `https://api.whatsapp.com/send?phone=3416728288&text=${texto}`;
+    var wsp = `https://api.whatsapp.com/send?phone=2478515908&text=${texto}`;
     
         //%0A Como te puedes fijar en la URL, %0A puede usarse para generar un caracter de salto de linea (0x0A).
 

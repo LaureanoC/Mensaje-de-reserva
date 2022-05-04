@@ -75,7 +75,7 @@ function crearFormularioInputInterseccion(pasaje,viaje){
     input.setAttribute("name","interseccion");
     input.setAttribute("id","interseccion");
     input.setAttribute("type","text");
-    input.setAttribute("placeholder","Corrientes y Pellegrini");
+    input.setAttribute("placeholder","Ingrese donde sube o baja");
     input.className="pasaje__input";
 
     input.addEventListener("keyup",function(){
